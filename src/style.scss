@@ -1,0 +1,153 @@
+@import "../src/variables.scss"; 
+@import "../src/mixins.scss"; 
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $background-color;
+  padding: 10px 10px;
+  font-family: $font-family;
+  position: relative;
+  z-index: 1; 
+
+  .hamburger-button {
+    @include flex-center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+
+    .bar {
+      width: 20px;
+      height: 2px;
+      background-color: black;
+      margin: 2px 0;
+      font-weight: 900;
+    }
+  }
+  .menu-link{
+    font-size: 1.1em;
+  }
+  input {
+    width: 80%;
+    background-color: $main-color;
+    color: $background-color;
+    border: 2px solid white;
+    padding: 8px;
+    margin-left: 10px;
+
+    @media (min-width: 375px) {
+      border: 2px solid black;
+      background-color: white;
+      ::placeholder {
+        color: black;
+      }
+    }
+  }
+
+  ::placeholder {
+    color: $background-color;
+    font: 1.1rem/3 sans-serif;
+  }
+
+  .logo {
+    font-size: 0.7rem;
+    display: block;
+  }
+
+  p {
+    margin: 1px;
+    color: black;
+  }
+
+  .menu {
+    display: none;
+    position: fixed;
+    top: 0px;
+    left: 0;
+    background-color: $main-color;
+    flex-direction: column;
+    height: 100%;
+
+    &.active {
+      display: flex;
+      @media (max-width: 375px) {
+        width: 300px; 
+      }
+    }
+
+    a,
+    label {
+      padding: 10px 20px;
+      color: $background-color;
+      text-decoration: none;
+      background-color: $main-color;
+
+      &:hover {
+        background-color: lighten($primary-color, 20%);
+      }
+
+      @media (min-width: 375px) {
+        background-color: transparent;
+        color: black;
+        text-decoration: none;
+        &:hover {
+          background-color: transparent;
+        }
+      }
+    }
+
+    @media (min-width: 375px) {
+      position: static;
+      display: flex;
+      background-color: transparent;
+      flex-direction: row;
+      width: auto;
+
+      a {
+        margin: 0 10px;
+      }
+    }
+  }
+
+  @media (min-width: 375px) {
+    .menu {
+      display: flex;
+    }
+
+    .hamburger-button {
+      display: none;
+    }
+
+    i.fas {
+      color: white;
+    }
+  }
+}
+
+.hamburger-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 40px;
+  height: 30px;
+
+  .bar {
+    width: 30px;
+    height: 3px;
+    background-color: black;
+    margin: 4px 0;
+  }
+
+  @media (min-width: 375px) {
+    display: none;
+  }
+}
