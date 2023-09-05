@@ -1,5 +1,5 @@
-@import "../src/variables.scss"; // Import variables
-@import "../src/mixins.scss"; // Import mixins
+@import "../src/variables.scss"; 
+@import "../src/mixins.scss"; 
 
 .navbar {
   display: flex;
@@ -8,8 +8,8 @@
   background-color: $background-color;
   padding: 10px 10px;
   font-family: $font-family;
-  position: relative; /* Add relative positioning */
-  z-index: 1; /* Set a higher z-index for the closed navbar */
+  position: relative;
+  z-index: 1; 
 
   .hamburger-button {
     @include flex-center;
@@ -43,7 +43,7 @@
       border: 2px solid black;
       background-color: white;
       ::placeholder {
-        color: black; /* Change placeholder background color */
+        color: black;
       }
     }
   }
@@ -69,14 +69,13 @@
     top: 0px;
     left: 0;
     background-color: $main-color;
-    //width: 100%;
     flex-direction: column;
     height: 100%;
 
     &.active {
       display: flex;
       @media (max-width: 375px) {
-        width: 300px; /* Adjust the width for smaller screens */
+        width: 300px; 
       }
     }
 
@@ -94,9 +93,9 @@
       @media (min-width: 375px) {
         background-color: transparent;
         color: black;
-        text-decoration: none; /* Remove underline from links */
+        text-decoration: none;
         &:hover {
-          background-color: transparent; /* Remove hover background color */
+          background-color: transparent;
         }
       }
     }
@@ -124,14 +123,11 @@
     }
 
     i.fas {
-      /* Style Font Awesome icons */
       color: white;
-      //transform: rotate(90deg);
     }
   }
 }
 
-/* Hamburger Button Styles */
 .hamburger-button {
   background: none;
   border: none;
@@ -147,7 +143,7 @@
   .bar {
     width: 30px;
     height: 3px;
-    background-color: black; /* Change icon color */
+    background-color: black;
     margin: 4px 0;
   }
 

@@ -221,7 +221,7 @@ export default {
   top: -40px;
   background: transparent;
   border: none;
-  padding: 5px 20px 2px 20px; /* Adjust padding for top and bottom */
+  padding: 5px 20px 2px 20px;
   margin-bottom: -10px;
   text-decoration: none;
   cursor: pointer;
@@ -266,15 +266,15 @@ export default {
 
 .counterLabel {
   display: block;
-  flex-grow: 1; /* Allow the label to grow and take available space */
+  flex-grow: 1;
   font-family: "Poppins", sans-serif;
 }
 
 .counterContainer {
   display: flex;
-  flex-direction: row-reverse; /* Reverse the order of elements in the container */
-  justify-content: space-between; /* Add space between elements */
-  align-items: center; /* Vertically center elements */
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
 }
 .senioritiUnderlineText {
   font-family: "Poppins", sans-serif;
@@ -316,13 +316,12 @@ export default {
   padding-left: 60px;
   padding-right: 60px;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.5);
-  /* box-shadow: 20px 2px 10px 10px; */
 }
 
 .counterBtn {
   height: 20px;
   width: 20px;
-  margin-left: 10px; /* Add margin to create space between buttons */
+  margin-left: 10px;
   margin-right: 10px;
   color: #afafaf;
   border: 1px solid #afafaf;
@@ -334,5 +333,4 @@ export default {
   flex: 1;
   justify-content: space-between;
 }
-/* ... Existing CSS ... */
 </style>

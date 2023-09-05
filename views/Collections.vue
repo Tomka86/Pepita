@@ -136,14 +136,14 @@ i {
 .collection-item {
   max-width: 50%;
   height: auto;
-  display: flex; /* Use Flexbox for centering images */
-  justify-content: center; /* Center the image horizontally */
-  align-items: center; /* Center the image vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @media screen and (max-width: 375px) {
   .container {
-    grid-template-columns: repeat(2, minmax(200px, 1fr)); /* Two columns */
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
     gap: 10px;
     margin-left: 100px;
     justify-content: center;

@@ -21,14 +21,14 @@ import { ref } from "vue";
 export default {
   name: "DatePicker",
   props: {
-    value: Date, // Allows using v-model
+    value: Date,
   },
   setup(props) {
     const selectedDate = ref(props.value || "");
     const showDatePicker = ref(false);
 
     const handleDateChange = () => {
-      showDatePicker.value = false; // Close the date picker when a date is selected
+      showDatePicker.value = false;
     };
 
     const selectedDateDisplay = ref("");
