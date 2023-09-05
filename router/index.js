@@ -10,14 +10,14 @@ const router = createRouter({
       component: () => import("../views/Collections.vue"),
     },
     {
+      path: "/collections2",
+      name: "collections2",
+      component: () => import("../views/Collections2.vue"),
+    },
+    {
       path: "/tickets",
       name: "tickets",
       component: () => import("../views/Tickets.vue"),
-    },
-    {
-      path: "/menu",
-      name: "menu",
-      component: () => import("../views/Menu.vue"),
     },
   ],
 });
