@@ -25,10 +25,13 @@
       >
         Tomorrow
       </button>
-      <DatePicker v-model="selectedDate" />
+      <button class="selectDateBtn" id="other" @click="toggleDatePicker">
+        Other
+      </button>
       {{ selectedDate }}
     </div>
     <hr id="selectDateUnderHr" />
+    <DatePicker ref="datePicker" v-model="selectedDate" v-if="showDatePicker" />
     <div id="timeStamp">
       <p>
         {{ timeStamp }}<br />
@@ -101,7 +104,9 @@ export default {
   },
   setup() {
     const selectedDate = ref("");
-    return { selectedDate };
+    const showDatePicker = ref(false);
+
+    return { selectedDate, showDatePicker };
   },
   data() {
     return {
@@ -120,6 +125,9 @@ export default {
     setInterval(this.getNow, 1000);
   },
   methods: {
+    toggleDatePicker() {
+      this.showDatePicker = !this.showDatePicker;
+    },
     addAdult() {
       this.adultsNumber += 1;
       this.totalPrice();
@@ -171,166 +179,3 @@ export default {
   },
 };
 </script>
-
-<style>
-.date {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin-left: 35px;
-}
-
-.title {
-  font-size: 1.1em;
-  font-family: "Poppins", sans-serif;
-  color: #ff3333;
-  position: absolute;
-  top: 15px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1;
-}
-
-.title2 {
-  font-family: "Poppins", sans-serif;
-  margin-top: 5px;
-  font-size: 1.4em;
-  margin-left: 10px;
-}
-.title3 {
-  font-family: "Poppins", sans-serif;
-  position: relative;
-  top: -25px;
-  font-size: 1.4em;
-  margin-left: 10px;
-}
-
-.underTitleText {
-  font-family: "Poppins", sans-serif;
-  color: #ff3333;
-  position: relative;
-  top: -40px;
-  font-size: 0.75em;
-  margin-left: 10px;
-}
-.selectDateBtn {
-  font-family: "Poppins", sans-serif;
-  font-size: 0.9em;
-  color: #d3d3d3;
-  position: relative;
-  top: -40px;
-  background: transparent;
-  border: none;
-  padding: 5px 20px 2px 20px;
-  margin-bottom: -10px;
-  text-decoration: none;
-  cursor: pointer;
-  transition: border-bottom-color 0.3s ease;
-}
-.selectDateBtn:active {
-  color: red;
-  padding-top: 3px;
-}
-
-.selectDateBtn:hover {
-  border-bottom: 4px solid #ff3333;
-  padding-top: 3px;
-}
-.selectDateBtn.clicked {
-  color: #000;
-}
-#selectDateUnderHr {
-  position: relative;
-  top: -40px;
-  color: li.;
-}
-
-#timeStamp {
-  font-family: "Poppins", sans-serif;
-  font-size: 0.7em;
-  display: flex;
-  justify-content: center;
-  position: relative;
-  top: -50px;
-}
-
-.counterRow {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 10px;
-  margin-left: 15px;
-  margin-right: 15px;
-}
-
-.counterLabel {
-  display: block;
-  flex-grow: 1;
-  font-family: "Poppins", sans-serif;
-}
-
-.counterContainer {
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-between;
-  align-items: center;
-}
-.senioritiUnderlineText {
-  font-family: "Poppins", sans-serif;
-  font-size: 0.6em;
-  color: #afafaf;
-  position: relative;
-  top: -20px;
-}
-
-#totalUpperRole {
-  background-color: #ff3333;
-  height: 2px;
-}
-
-.total {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  font-family: "Poppins", sans-serif;
-  font-size: 0.9em;
-  margin-top: -15px;
-  margin-left: 10px;
-  margin-right: 40px;
-}
-
-#payment {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-#paymentBtn {
-  font-family: "Poppins", sans-serif;
-  font-size: 0.6em;
-  border: none;
-  color: white;
-  background-color: #ff3333;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 60px;
-  padding-right: 60px;
-  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.5);
-}
-
-.counterBtn {
-  height: 20px;
-  width: 20px;
-  margin-left: 10px;
-  margin-right: 10px;
-  color: #afafaf;
-  border: 1px solid #afafaf;
-  background-color: white;
-}
-#ages {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  justify-content: space-between;
-}
-</style>
